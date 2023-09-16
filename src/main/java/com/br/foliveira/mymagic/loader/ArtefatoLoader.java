@@ -1,4 +1,4 @@
-package com.br.foliveira.mymagic;
+package com.br.foliveira.mymagic.loader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,19 +10,18 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import com.br.foliveira.mymagic.model.negocio.Artefato;
 import com.br.foliveira.mymagic.model.negocio.Cor;
-import com.br.foliveira.mymagic.model.negocio.Terreno;
 
-@Order(1)
+@Order(3)
 @Component
-public class TerrenoLoader implements ApplicationRunner{
+public class ArtefatoLoader implements ApplicationRunner{
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        
-        Map<Integer, Terreno> mapaTerreno = new HashMap<Integer, Terreno>();
+        Map<Integer, Artefato> mapaArtefato = new HashMap<Integer, Artefato>();
 
-        FileReader file = new FileReader("arquivos/terreno.txt");
+        FileReader file = new FileReader("arquivos/artefato.txt");
 		BufferedReader br = new BufferedReader(file);
 		
 		String linha = br.readLine();
@@ -32,20 +31,22 @@ public class TerrenoLoader implements ApplicationRunner{
 		while(linha != null) {
 			campos = linha.split(";"); 
 					
-			Terreno terreno = new Terreno(
+			Artefato artefato = new Artefato(
 					Integer.valueOf(campos[0]),
                     campos[1],
                     Cor.valueOf(campos[2]),
-					Integer.valueOf(campos[3])
+					Boolean.valueOf(campos[3]),
+                    campos[4],
+                    Integer.valueOf(campos[5])
 				);				
 			
-			mapaTerreno.put(terreno.getCodigo(), terreno);
+			mapaArtefato.put(artefato.getCodigo(), artefato);
 
 			linha = br.readLine();
 		}
 
-		for(Terreno terreno : mapaTerreno.values()) {
-			System.out.println(terreno);			
+		for(Artefato artefato : mapaArtefato.values()) {
+			System.out.println(artefato);			
 		}
 
 		br.close();	

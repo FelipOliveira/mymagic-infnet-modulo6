@@ -34,6 +34,6 @@ public class Artefato extends Carta{
 
     @Override
 	public String toString() {
-		return super.toString() + "\ncusto:\t" + custo + "\nequipamento:\t" + equipamento;
+		return super.toString() + "\ncusto:\t" + custo + "\nequipamento:\t" + equipamento + "\nhabilidade:\t" + habilidade;
 	}
 }

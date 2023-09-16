@@ -1,0 +1,2 @@
+9;Espada;INCOLOR;true;+1/+0;2
+10;Orbe;INCOLOR;false;+1 mana incolor;3

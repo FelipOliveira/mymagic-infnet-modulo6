@@ -1,0 +1,3 @@
+6;Humano;BRANCO;1;1;soldado humano;1
+7;Elfo;VERDE;1;2;batedor elfo;1
+8;Duende;VERMELHO;2;1;duende ladino;2
