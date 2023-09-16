@@ -1,0 +1,20 @@
+Deck do Joãozinho
+T;1;Floresta;VERDE;1
+T;1;Floresta;VERDE;1
+T;1;Floresta;VERDE;1
+T;1;Floresta;VERDE;1
+T;1;Floresta;VERDE;1
+T;2;Montanha;VERMELHO;1
+T;2;Montanha;VERMELHO;1
+T;2;Montanha;VERMELHO;1
+T;2;Montanha;VERMELHO;1
+T;2;Montanha;VERMELHO;1
+T;2;Montanha;VERMELHO;1
+C;7;Elfo;VERDE;1;2;batedor elfo;1
+C;7;Elfo;VERDE;1;2;batedor elfo;1
+C;7;Elfo;VERDE;1;2;batedor elfo;1
+C;8;Duende;VERMELHO;2;1;duende ladino;2
+C;8;Duende;VERMELHO;2;1;duende ladino;2
+C;8;Duende;VERMELHO;2;1;duende ladino;2
+A;9;Espada;INCOLOR;true;+1/+0;2
+A;10;Orbe;INCOLOR;false;+1 mana incolor;3
