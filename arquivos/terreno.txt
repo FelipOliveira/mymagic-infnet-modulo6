@@ -1,0 +1,5 @@
+1;Floresta;VERDE;1
+2;Montanha;VERMELHO;1
+3;Ilha;AZUL;1
+4;Planície;BRANCO;1
+5;Pântano;PRETO;1

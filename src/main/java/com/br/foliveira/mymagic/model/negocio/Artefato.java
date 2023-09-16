@@ -1,9 +1,17 @@
 package com.br.foliveira.mymagic.model.negocio;
 
 public class Artefato extends Carta{
+    
     private boolean equipamento;
     private String habilidade;
     private int custo;
+    
+    public Artefato(int codigo, String nome, Cor cor, boolean equipamento, String habilidade, int custo) {
+        super(codigo, nome, cor);
+        this.equipamento = equipamento;
+        this.habilidade = habilidade;
+        this.custo = custo;
+    }
 
     public boolean isEquipamento() {
         return equipamento;

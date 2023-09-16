@@ -1,10 +1,19 @@
 package com.br.foliveira.mymagic.model.negocio;
 
 public class Criatura extends Carta{
+    
     private int poder;
     private int resistencia;
     private String texto;
     private int custo;
+    
+    public Criatura(int codigo, String nome, Cor cor, int poder, int resistencia, String texto, int custo) {
+        super(codigo, nome, cor);
+        this.poder = poder;
+        this.resistencia = resistencia;
+        this.texto = texto;
+        this.custo = custo;
+    }
 
     public int getPoder() {
         return poder;

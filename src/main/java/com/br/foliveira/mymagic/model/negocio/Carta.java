@@ -5,6 +5,12 @@ public abstract class Carta {
     private String nome;
     private Cor cor;
 
+    public Carta(int codigo, String nome, Cor cor) {
+        this.codigo = codigo;
+        this.nome = nome;
+        this.cor = cor;
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -26,6 +32,6 @@ public abstract class Carta {
 
     @Override
 	public String toString() {
-		return "código\t " + codigo +"\nnome:\t"+ nome + "\ncor:\t" + cor;
+		return "\nnome:\t"+ nome + "\ncor:\t" + cor;
 	}
 }
