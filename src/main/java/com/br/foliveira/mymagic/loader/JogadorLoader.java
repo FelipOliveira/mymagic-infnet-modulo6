@@ -2,10 +2,6 @@ package com.br.foliveira.mymagic.loader;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -32,8 +28,6 @@ public class JogadorLoader implements ApplicationRunner{
 				campos[0],
                 new Deck(campos[1])
 			);
-
-			//JogadorController.incluir(jogador);
 			
 			linha = br.readLine();
 		}

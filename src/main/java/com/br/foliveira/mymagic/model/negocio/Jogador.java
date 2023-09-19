@@ -3,6 +3,7 @@ package com.br.foliveira.mymagic.model.negocio;
 import java.time.LocalDateTime;
 
 public class Jogador {
+        
     private String nome;
     private LocalDateTime dataRegistro;
     private Deck deck;

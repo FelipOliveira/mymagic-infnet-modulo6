@@ -1,5 +1,8 @@
 package com.br.foliveira.mymagic.model.negocio;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Criatura extends Carta{
     
     private int poder;
