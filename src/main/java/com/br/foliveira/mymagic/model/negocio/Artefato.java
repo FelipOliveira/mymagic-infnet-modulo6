@@ -1,5 +1,8 @@
 package com.br.foliveira.mymagic.model.negocio;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Artefato extends Carta{
     
     private boolean equipamento;
@@ -11,6 +14,10 @@ public class Artefato extends Carta{
         this.equipamento = equipamento;
         this.habilidade = habilidade;
         this.custo = custo;
+    }
+
+    public Artefato(){
+        super();
     }
 
     public boolean isEquipamento() {

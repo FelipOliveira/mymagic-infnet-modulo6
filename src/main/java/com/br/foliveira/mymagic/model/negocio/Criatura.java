@@ -18,6 +18,10 @@ public class Criatura extends Carta{
         this.custo = custo;
     }
 
+    public Criatura(){
+        super();
+    }
+    
     public int getPoder() {
         return poder;
     }

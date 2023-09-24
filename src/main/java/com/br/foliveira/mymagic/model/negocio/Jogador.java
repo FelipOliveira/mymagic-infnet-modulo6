@@ -2,8 +2,21 @@ package com.br.foliveira.mymagic.model.negocio;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
 public class Jogador {
-        
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
+    private Long id;
+
     private String nome;
     private LocalDateTime dataRegistro;
     private Deck deck;
@@ -12,6 +25,10 @@ public class Jogador {
         this.nome = nome;
         this.dataRegistro = LocalDateTime.now();
         this.deck = deck;
+    }
+
+    public Jogador(){
+        this.dataRegistro = LocalDateTime.now();
     }
 
     public String getNome() {

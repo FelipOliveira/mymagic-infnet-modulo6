@@ -12,6 +12,10 @@ public class Terreno extends Carta{
         this.qtdeMana = qtdeMana;
     }
 
+    public Terreno(){
+        super();
+    }
+
     public int getQtdeMana() {
         return qtdeMana;
     }

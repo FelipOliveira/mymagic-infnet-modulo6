@@ -21,6 +21,9 @@ public abstract class Carta {
         this.cor = cor;
     }
 
+    public Carta() {
+    }
+
     public int getCodigo() {
         return codigo;
     }
