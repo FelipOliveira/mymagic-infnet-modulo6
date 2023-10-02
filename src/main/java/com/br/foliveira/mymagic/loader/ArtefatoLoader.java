@@ -17,7 +17,7 @@ import com.br.foliveira.mymagic.model.negocio.Artefato;
 import com.br.foliveira.mymagic.model.negocio.Cor;
 import com.br.foliveira.mymagic.repository.ArtefatoRepository;
 
-@Order(3)
+@Order(2)
 @Component
 @Configuration
 public class ArtefatoLoader implements ApplicationRunner{
@@ -46,7 +46,7 @@ public class ArtefatoLoader implements ApplicationRunner{
 						Integer.valueOf(campos[5])
 					);				
 				
-				mapaArtefato.put(artefato.getCodigo(), artefato);
+				mapaArtefato.put(artefato.getId(), artefato);
 				repository.save(artefato);
 				linha = br.readLine();
 			}

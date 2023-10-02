@@ -21,7 +21,7 @@ public class CartaServiceImpl implements CartaService{
 
     @Override
     public List<Carta> listar() {
-        return repository.findAll();
+        return (List<Carta>) repository.findAll();
     }
 
     

@@ -17,7 +17,7 @@ import com.br.foliveira.mymagic.model.negocio.Cor;
 import com.br.foliveira.mymagic.model.negocio.Criatura;
 import com.br.foliveira.mymagic.repository.CriaturaRepository;
 
-@Order(2)
+@Order(3)
 @Component
 @Configuration
 public class CriaturaLoader implements ApplicationRunner{
@@ -47,7 +47,7 @@ public class CriaturaLoader implements ApplicationRunner{
 						Integer.valueOf(campos[6])
 					);				
 				
-				mapaCriatura.put(criatura.getCodigo(), criatura);
+				mapaCriatura.put(criatura.getId(), criatura);
 				repository.save(criatura);
 				linha = br.readLine();
 			}

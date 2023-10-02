@@ -8,14 +8,16 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import com.br.foliveira.mymagic.model.negocio.Deck;
 import com.br.foliveira.mymagic.model.negocio.Jogador;
 import com.br.foliveira.mymagic.repository.JogadorRepository;
 
-@Component
-@Configuration
+// @Order(4)
+// @Component
+// @Configuration
 public class JogadorLoader implements ApplicationRunner{
 
 	Jogador jogador = new Jogador();

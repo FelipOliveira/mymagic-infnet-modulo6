@@ -1,8 +1,10 @@
 package com.br.foliveira.mymagic.model.negocio;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "TArtefato")
 public class Artefato extends Carta{
     
     private boolean equipamento;

@@ -21,7 +21,7 @@ public class CriaturaServiceImpl implements CriaturaService{
 
     @Override
     public List<Criatura> listar() {
-        return repository.findAll();
+        return (List<Criatura>) repository.findAll();
     }
     
 }

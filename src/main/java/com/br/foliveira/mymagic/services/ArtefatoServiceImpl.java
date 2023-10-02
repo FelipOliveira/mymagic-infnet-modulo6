@@ -21,7 +21,7 @@ public class ArtefatoServiceImpl implements ArtefatoService{
 
     @Override
     public List<Artefato> listar() {
-        return repository.findAll();
+        return (List<Artefato>) repository.findAll();
     }
     
 }

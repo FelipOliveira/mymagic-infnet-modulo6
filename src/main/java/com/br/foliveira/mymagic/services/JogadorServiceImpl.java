@@ -21,7 +21,7 @@ public class JogadorServiceImpl implements JogadorService{
 
     @Override
     public List<Jogador> listar() {
-        return repository.findAll();
+        return (List<Jogador>) repository.findAll();
     }
     
 }

@@ -1,22 +1,36 @@
 package com.br.foliveira.mymagic.model.negocio;
 
+import java.util.List;
+
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
-@MappedSuperclass
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+@Entity
+@Table(name = "TCarta")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Carta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int codigo;
+    private int id;
 
     private String nome;
     private Cor cor;
 
+    @JsonIgnore
+    @ManyToMany(mappedBy = "cartas")
+    private List<Deck> decks;
+
     public Carta(int codigo, String nome, Cor cor) {
-        this.codigo = codigo;
+        this.id = codigo;
         this.nome = nome;
         this.cor = cor;
     }
@@ -24,11 +38,11 @@ public abstract class Carta {
     public Carta() {
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public void setId(int codigo) {
+        this.id = codigo;
     }
     public String getNome() {
         return nome;
@@ -41,6 +55,12 @@ public abstract class Carta {
     }
     public void setCor(Cor cor) {
         this.cor = cor;
+    }
+    public List<Deck> getDecks() {
+        return decks;
+    }
+    public void setDecks(List<Deck> decks) {
+        this.decks = decks;
     }
 
     @Override

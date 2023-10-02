@@ -44,7 +44,7 @@ public class TerrenoLoader implements ApplicationRunner{
 						Integer.valueOf(campos[3])
 					);				
 				
-				mapaTerreno.put(terreno.getCodigo(), terreno);
+				mapaTerreno.put(terreno.getId(), terreno);
 				repository.save(terreno);
 				linha = br.readLine();
 			}

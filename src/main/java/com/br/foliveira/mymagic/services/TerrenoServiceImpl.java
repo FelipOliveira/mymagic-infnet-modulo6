@@ -20,7 +20,7 @@ public class TerrenoServiceImpl implements TerrenoService{
 
     @Override
     public List<Terreno> listar() {
-        return repository.findAll();
+        return (List<Terreno>) repository.findAll();
     }
     
 }

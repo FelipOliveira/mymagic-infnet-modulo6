@@ -6,10 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
+@Table(name = "TJogador")
 public class Jogador {
     
     @Id
@@ -19,7 +23,10 @@ public class Jogador {
 
     private String nome;
     private LocalDateTime dataRegistro;
-    private Deck deck;
+
+    @OneToOne
+    @JoinColumn(name = "jogador_id")
+    private Deck deck = new Deck();
 
     public Jogador(String nome, Deck deck){
         this.nome = nome;
@@ -52,6 +59,12 @@ public class Jogador {
 
     @Override
     public String toString(){
-        return "\nnome:\t" + nome + "\ndata de registro:\t" + dataRegistro + "\ndeck;\t" + deck.getNome();
+        return "\nnome:\t" + nome + "\ndata de registro:\t" + dataRegistro + "\ndeck;\t" + printDeck();
+    }
+
+    private String printDeck(){
+        if(deck.getCartas().isEmpty()) return "deck vazio";
+
+        return deck.getNome();
     }
 }

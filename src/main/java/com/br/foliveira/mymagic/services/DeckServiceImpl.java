@@ -21,7 +21,7 @@ public class DeckServiceImpl implements DeckService{
 
     @Override
     public List<Deck> listar() {
-        return repository.findAll();
+        return (List<Deck>) repository.findAll();
     }
     
 }
