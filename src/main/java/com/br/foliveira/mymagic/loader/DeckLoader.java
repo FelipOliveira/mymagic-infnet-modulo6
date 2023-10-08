@@ -21,9 +21,9 @@ import com.br.foliveira.mymagic.model.negocio.Deck;
 import com.br.foliveira.mymagic.model.negocio.Terreno;
 import com.br.foliveira.mymagic.repository.DeckRepository;
 
-@Order(5)
-@Component
-@Configuration
+// @Order(5)
+// @Component
+// @Configuration
 public class DeckLoader implements ApplicationRunner{
 
 	Map<String, Deck> mapaDeck = new HashMap<String, Deck>();

@@ -15,9 +15,9 @@ import com.br.foliveira.mymagic.model.negocio.Deck;
 import com.br.foliveira.mymagic.model.negocio.Jogador;
 import com.br.foliveira.mymagic.repository.JogadorRepository;
 
-// @Order(4)
-// @Component
-// @Configuration
+@Order(4)
+@Component
+@Configuration
 public class JogadorLoader implements ApplicationRunner{
 
 	Jogador jogador = new Jogador();

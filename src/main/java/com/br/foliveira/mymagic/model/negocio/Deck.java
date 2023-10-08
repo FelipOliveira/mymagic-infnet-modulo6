@@ -27,7 +27,7 @@ public class Deck {
     private String nome;
     
     //TODO: resolver problema de mapeamento
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "deck_carta", 
       joinColumns = @JoinColumn(name = "carta_id", referencedColumnName = "id"), 
       inverseJoinColumns = @JoinColumn(name = "deck_id", 

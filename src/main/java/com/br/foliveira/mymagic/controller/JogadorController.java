@@ -25,7 +25,7 @@ public class JogadorController {
     }
     
     @PostMapping("/adicionarjogador")
-    String novoJogador(@RequestBody Jogador jogador) {
+    public String novoJogador(@RequestBody Jogador jogador) {
         jogadorService.salvar(jogador);
         return jogador.getNome() + " adicionado(a).";
     }

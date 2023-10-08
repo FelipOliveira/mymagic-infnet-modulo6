@@ -2,6 +2,7 @@ package com.br.foliveira.mymagic.model.negocio;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,7 +25,7 @@ public class Jogador {
     private String nome;
     private LocalDateTime dataRegistro;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "jogador_id")
     private Deck deck = new Deck();
 
