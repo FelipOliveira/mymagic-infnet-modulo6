@@ -3,13 +3,10 @@ package com.br.foliveira.mymagic.model.negocio;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -26,15 +23,11 @@ public class Deck {
 
     private String nome;
     
-    //TODO: resolver problema de mapeamento
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "deck_carta", 
-      joinColumns = @JoinColumn(name = "carta_id", referencedColumnName = "id"), 
-      inverseJoinColumns = @JoinColumn(name = "deck_id", 
-      referencedColumnName = "id"))
+    @ManyToMany(mappedBy = "decks")
     private List<Carta> cartas = new ArrayList<Carta>();
 
     @OneToOne(mappedBy = "deck")
+    @JsonIgnore
     private Jogador jogador;
 
     public Deck(String nome) {

@@ -13,18 +13,18 @@ import com.br.foliveira.mymagic.model.negocio.Jogador;
 import com.br.foliveira.mymagic.services.JogadorService;
 
 @RestController
-@RequestMapping("/jogador")
+@RequestMapping("/jogadores")
 public class JogadorController {
     
     @Autowired
     private JogadorService jogadorService;
 
-    @GetMapping("/listar")
+    @GetMapping
     public List<Jogador> listarJogadores(){
         return jogadorService.listar();
     }
     
-    @PostMapping("/adicionarjogador")
+    @PostMapping
     public String novoJogador(@RequestBody Jogador jogador) {
         jogadorService.salvar(jogador);
         return jogador.getNome() + " adicionado(a).";

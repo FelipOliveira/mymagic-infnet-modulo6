@@ -2,12 +2,15 @@ package com.br.foliveira.mymagic.model.negocio;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
@@ -26,7 +29,11 @@ public abstract class Carta {
     private Cor cor;
 
     @JsonIgnore
-    @ManyToMany(mappedBy = "cartas")
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "carta_deck", 
+      joinColumns = @JoinColumn(name = "deck_id", referencedColumnName = "id"), 
+      inverseJoinColumns = @JoinColumn(name = "carta_id", 
+      referencedColumnName = "id"))
     private List<Deck> decks;
 
     public Carta(int codigo, String nome, Cor cor) {

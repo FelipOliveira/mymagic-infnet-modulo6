@@ -10,7 +10,6 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
@@ -21,13 +20,13 @@ import com.br.foliveira.mymagic.model.negocio.Deck;
 import com.br.foliveira.mymagic.model.negocio.Terreno;
 import com.br.foliveira.mymagic.repository.DeckRepository;
 
-// @Order(5)
-// @Component
-// @Configuration
+@Order(5)
+@Component
+@Configuration
 public class DeckLoader implements ApplicationRunner{
 
 	Map<String, Deck> mapaDeck = new HashMap<String, Deck>();
-
+	//TODO: ajustar o loader para receber o arquivo .txt corretamente
 	@Bean
 	CommandLineRunner initDeckDatabase(DeckRepository repository){
 		return args -> {
@@ -88,11 +87,8 @@ public class DeckLoader implements ApplicationRunner{
 					break;
 
 				default:
-				
-					deck = new Deck(
-						campos[0]
-					);				
-
+	
+					deck = new Deck(campos[0]);				
 					mapaDeck.put(deck.getNome(), deck);
 
 					break;

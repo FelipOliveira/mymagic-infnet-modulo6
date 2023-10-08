@@ -13,7 +13,7 @@ import com.br.foliveira.mymagic.model.negocio.Deck;
 import com.br.foliveira.mymagic.services.DeckService;
 
 @RestController
-@RequestMapping("/deck")
+@RequestMapping("/decks")
 public class DeckController {
 
     @Autowired
