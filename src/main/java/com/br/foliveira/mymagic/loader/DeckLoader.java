@@ -37,7 +37,7 @@ public class DeckLoader implements ApplicationRunner{
 			
 			String[] campos = null;
 			
-			Deck deck = null;
+			Deck deck = new Deck();
 			
 			while(linha != null) {
 				campos = linha.split(";"); 
@@ -88,7 +88,7 @@ public class DeckLoader implements ApplicationRunner{
 
 				default:
 	
-					deck = new Deck(campos[0]);				
+					deck.setNome(campos[0]);				
 					mapaDeck.put(deck.getNome(), deck);
 
 					break;

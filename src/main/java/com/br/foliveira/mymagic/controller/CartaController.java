@@ -1,10 +1,14 @@
 package com.br.foliveira.mymagic.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,11 +43,28 @@ public class CartaController {
     public List<Carta> listarCartas(){
         return cartaService.listar();
     }
+
+    @GetMapping("/cartas/{carta_id}")
+    public Optional<Carta> buscarCarta(@PathVariable("carta_id") int id){
+        return cartaService.buscarPorID(id);
+    }
     
     @PostMapping("/adicionarcarta")
-    String novaCarta(@RequestBody Carta carta) {
+    public String novaCarta(@RequestBody Carta carta) {
         cartaService.salvar(carta);
         return carta.getNome() + " adicionado(a).";
+    }
+
+    @PutMapping("/cartas/{carta_id}")
+    public String alterarCarta(@PathVariable("carta_id") int id, @RequestBody Carta carta){
+        cartaService.editarCarta(id, carta);
+        return "Carta alterada.";
+    }
+
+    @DeleteMapping("/cartas/{carta_id}")
+    public String deletarCarta(@PathVariable("carta_id") int id){
+        cartaService.deletarCarta(id);
+        return "Carta excluída.";
     }
 
     // terrenos
@@ -53,7 +74,7 @@ public class CartaController {
     }
     
     @PostMapping("/adicionarterreno")
-    String novoTerreno(@RequestBody Terreno terreno) {
+    public String novoTerreno(@RequestBody Terreno terreno) {
         terrenoService.salvar(terreno);
         return terreno.getNome() + " adicionado(a).";
     }
@@ -65,7 +86,7 @@ public class CartaController {
     }
 
     @PostMapping("/adicionarcriatura")
-    String novaCriatura(@RequestBody Criatura criatura) {
+    public String novaCriatura(@RequestBody Criatura criatura) {
         criaturaService.salvar(criatura);
         return criatura.getNome() + " adicionado(a).";
     }
@@ -77,7 +98,7 @@ public class CartaController {
     }
 
     @PostMapping("/adicionarartefato")
-    String novoArtefato(@RequestBody Artefato artefato) {
+    public String novoArtefato(@RequestBody Artefato artefato) {
         artefatoService.salvar(artefato);
         return artefato.getNome() + " adicionado(a).";
     }
